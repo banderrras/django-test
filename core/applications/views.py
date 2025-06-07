@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import UploadFileForm
-from .utils import process_excel_file  # создадим позже
+from .utils import process_excel_file
 
 def upload_file(request):
     if request.method == "POST":

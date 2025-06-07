@@ -6,8 +6,8 @@ def process_excel_file(file):
     ws = wb.active
     for row in ws.iter_rows(min_row=2, values_only=True):  # Пропускаем заголовок
         data = {
-            "name": row[0],
-            "city": row[1],
+            "name": row[6],
+            "city": row[14],
             "phone": row[2],
             # добавьте нужные поля
         }

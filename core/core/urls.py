@@ -19,5 +19,17 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('applications.urls')),
+    path('applications/', include('applications.urls')),
 ]
+
+from django.views.generic import RedirectView
+urlpatterns += [
+    path('', RedirectView.as_view(url='/applications/', permanent=True)),
+]
+
+# Используйте static() чтобы добавить соотношения для статических файлов
+# Только на период разработки
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
