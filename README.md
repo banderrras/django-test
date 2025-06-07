@@ -1,0 +1,3 @@
+- django
+- celery /rabbitMQ
+- flower for checking the queue
